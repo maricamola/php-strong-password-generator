@@ -20,6 +20,28 @@ Invece di visualizzare la password nella index, effettuare un redirect ad una pa
 
 ## Workflow
 
+**Milestone 1**
+
+- Importo i 'componenti' head,header,footer in index
+- Creo un form con un compo input e un buttone per generare la password
+- Faccio un controllo if per verificare che il numero inserito sia compreso tra 8-15;
+- Se è corretto, stampo la password
+- Se non è corretto, stampo messaggio di errore 
+
+**Milestone 2**
+
+- Creo un file "functions.php"
+- Trasferisco la funzione nel nuovo file
+- Incorporo il nuovo file in index.php
+
+**Milestone 3 (BONUS)**
+
+- Creo un file chiamato "pagina-atterraggio.php" dove mi inserisco i componenti che voglio visualizzare
+- In index aggiungo nell'If una sessione che mi reindirizza alla nuova pagina
+- Salvo in una nuova variabile la password generata
+- La stampo nella pagina di atterraggio
+- Aggiungo un controllo, dove dichiaro che se la password non viene generata, l'utente non viene reindirizzato alla pagina di atterraggio.
+
 
 
 
