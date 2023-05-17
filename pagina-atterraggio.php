@@ -4,11 +4,11 @@ session_start();
 
 $password = $_SESSION['new_password'];
 
-// if (isset($_SESSION['new_password'])) {
-//   $password = $_SESSION['new_password'];
-// } else {
-//   header('Location: ./index.php');
-// }
+if (isset($_SESSION['new_password'])) {
+  $password = $_SESSION['new_password'];
+} else {
+  header('Location: ./index.php');
+}
 
 
 require_once __DIR__ . '/partials/head.php';
