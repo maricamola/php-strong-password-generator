@@ -15,6 +15,8 @@
 //   var_dump($_GET['length']);
 // }
 
+require_once __DIR__ . '/partials/functions.php';
+
 $error_msg = '';
 $password = '';
 
@@ -26,14 +28,6 @@ if (isset($_GET['length']) && is_numeric($_GET['length']) && $_GET['length'] >= 
   $error_msg = 'Inserire un numero compreso tra 8-15';
 }
 
-function generatePassword($length)
-{
-  $chars = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789!@#$%^&*()_-=+;:,.?";
-  //substr serve ad estrarre un parte della stringa restituita da str_shuffl
-  //str_shuffle mescola tutti i caratteri in una stringa
-  $password = substr(str_shuffle($chars), 0, $length);
-  return $password;
-}
 ?>
 
 <?php
