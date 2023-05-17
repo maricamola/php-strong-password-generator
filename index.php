@@ -20,10 +20,18 @@ require_once __DIR__ . '/partials/functions.php';
 $error_msg = '';
 $password = '';
 
-if (isset($_GET['length']) && is_numeric($_GET['length']) && $_GET['length'] >= 8 && $_GET['length'] <= 15) {
+if (isset($_GET['length']) && $_GET['length'] && $_GET['length'] >= 8 && $_GET['length'] <= 15) {
   $length = $_GET['length'];
   $password = generatePassword($length);
   $password_msg = 'La password generata è:';
+
+
+  //Metto in sessione la password generata
+  session_start();
+  $_SESSION['new_password'] = $password;
+
+  //Reindirizzo alla pagina di atterraggio
+  header('Location: ./pagina-atterraggio.php');
 } else if (isset($_GET['length'])) {
   $error_msg = 'Inserire un numero compreso tra 8-15';
 }
@@ -47,7 +55,7 @@ require_once __DIR__ . '/partials/head.php';
           aria-label="default input example">
         <p class="text-danger"><?php echo $error_msg ?></p>
         <button type="submit" class="btn btn-primary my-3">Genera Password</button>
-        <p class="text"><?php echo $password_msg ?? '' ?> <?php echo $password ?></p>
+        <p class="text"><?php echo $password ?></p>
     </form>
   </div>
 
